@@ -22,4 +22,4 @@ No Cpk, process capability, control limits or statistically meaningful Sigma lev
 | Measure | CTQ definitions and independent denominators | Defined; dataset insufficient |
 | Analyze | Defect register and FMEA | Initial analysis complete |
 | Improve | Service Recovery defects corrected before import | Demonstrated for listed defects |
-| Control | Regression catalogue, hashes and release gates | Designed; repeated-run evidence pending |
+| Control | Regression catalogue, hashes and release gates | Complete for Portfolio Preview: 18/18 synthetic regression checks passed and repository CI is green |

@@ -13,9 +13,9 @@ Assessed against the documented internal 100-point portfolio rubric. This score 
 | PMP governance alignment | 8 | 8 | Real pilot governance artifacts. |
 | Agile delivery evidence | 6 | 6 | Real sprint/feedback history across a pilot. |
 | Testing and failure resilience | 12 | 11 | Production-scale and live-integration negative-path testing. |
-| Documentation, traceability, and GitHub reproducibility | 6 | 6 | Maintain green CI after final closure commit. |
+| Documentation, traceability, and GitHub reproducibility | 6 | 6 | Maintain the synchronized evidence state as future changes are introduced. |
 | Executive communication and demo clarity | 4 | 3 | Publish the planned 60–90 second demo. |
 | **Total** | **100** | **94** | |
 
 ## Interpretation
-This is an internal portfolio assessment, not an external certification or production-readiness rating.
+This is an internal portfolio assessment, not an external certification or broader maturity rating. A 94/100 score does not mean the Portfolio Preview is 94% complete; current technical/documentation scope is closed, while the score deliberately withholds points for evidence available only at later maturity levels and for the pending demo.

@@ -9,7 +9,7 @@
 | EV-CM-01 | Customer Momentum completed one owner-run synthetic n8n path with all 24 nodes green. | `evidence/screenshots/customer-momentum-green.png` |
 | EV-ADV-01 | Consolidated adversarial regression completed successfully in n8n. | `evidence/screenshots/adversarial-regression-green.png` |
 | EV-ADV-02 | 18/18 synthetic adversarial, negative-path, security and cross-module tests passed. | `evidence/reports/adversarial-regression-v0.1.html` |
-| EV-CI-01 | Repository checksum validation passed on the repository state preceding this closure delta. | GitHub Actions checksum-validation run |
+| EV-CI-01 | GitHub Actions validation passed on the dedicated `vantix-attestor` release repository after checksum correction and before the documentation-synchronization commit. | Green GitHub Actions run captured during release closure |
 
 ## Adversarial coverage
 - Commitment Assurance: 4 fail-closed cases.
@@ -20,3 +20,5 @@
 
 ## Limitations
 All regression evidence is synthetic. It does not demonstrate production-scale operation, live Salesforce execution for the new Attestor modules, live model-provider execution for those modules, or real-customer outcome validation.
+
+| EV-MIG-01 | Control Value-to-Attestor lineage, preservation and redesign decisions are documented. | `docs/control-value-to-attestor-migration.md` |

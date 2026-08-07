@@ -33,7 +33,7 @@ The Service Recovery pre-import review found unsafe reliance on evidence array o
 
 ## Limitation
 
-One positive synthetic execution path per primary module is evidenced, and the consolidated adversarial/negative-path suite passed 18/18 checks. Production-scale testing, live Salesforce and model-provider integration for the new modules, real-customer outcome validation, external practitioner review, and a recorded 60–90 second demo remain open.
+One positive synthetic execution path per primary module is evidenced, and the consolidated adversarial/negative-path suite passed 18/18 checks. Production-scale testing, live Salesforce/model-provider operation for the new modules and real-customer outcome validation are outside the current Portfolio Preview evidence boundary. No external practitioner review is claimed. The only intentionally pending Portfolio Preview presentation artifact is the recorded 60–90 second demo.
 
 ## Lineage
 
@@ -68,4 +68,4 @@ The consolidated synthetic regression harness passed **18/18** checks spanning C
 
 ## Release position
 
-This repository is labelled **Portfolio Preview**, not production readiness, Verified Release, or externally certified. Final tier advancement is blocked until the open gates in [`docs/final-signoff-gates.md`](docs/final-signoff-gates.md) are closed.
+This repository is labelled **Portfolio Preview**, not production readiness, Verified Release, or externally certified. The current **Portfolio Preview** technical and documentation gates are closed. Advancement to a higher maturity tier would require new evidence; it is not an unfinished requirement of this release. The recorded demo remains the sole pending presentation artifact.

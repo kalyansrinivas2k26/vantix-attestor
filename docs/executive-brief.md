@@ -31,15 +31,12 @@ Use a shared governed-control pattern for correlation, evidence validation, boun
 - It does not prove live Salesforce reads or writes.
 - It does not prove live Gemini or another model-provider interaction; AI steps are synthetic replay fixtures.
 - It does not prove real-customer communication, approval or outcome.
-- It does not yet include executed adversarial prompt-injection, malformed-output, sensitive-data disclosure or excessive-agency tests for all modules.
-- It does not include a recorded 60–90 second demo or external practitioner review.
+- The executed adversarial suite is synthetic and does not prove production-scale attack resistance, live-provider safety, penetration-test completion or real-tenant security.
+- It does not include a recorded 60–90 second demo. No external practitioner review is claimed.
 - It does not establish process capability, control limits, Cpk or a statistically meaningful Sigma level.
 
 # 7. Roadmap
 
-1. Execute the negative-path and governance test catalogue.
-2. Record clean-import evidence from the sanitized public exports.
-3. Complete OWASP-aligned adversarial security tests.
-4. Record the 60–90 second demo.
-5. Seek and document practitioner review where realistically available.
-6. Introduce controlled live-provider and live-Salesforce pilots only after security and approval gates pass.
+1. Record the 60–90 second demo.
+2. Seek and document practitioner review if and when realistically obtained; no such review is required or claimed for the current Portfolio Preview.
+3. Introduce controlled live-provider and live-Salesforce pilots only if the project is intentionally advanced beyond Portfolio Preview.
