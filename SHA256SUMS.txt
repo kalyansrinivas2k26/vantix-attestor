@@ -1,4 +1,4 @@
-54b6522104efe8c8dd951172ed8f4b66dac123e7ee0805fb4f134ed110b4892c  df20adc25aa95664ca05ca916f3b24b3929ee9dec7e32180a21c11d28703961b ./.github/workflows/validate.yml
+df20adc25aa95664ca05ca916f3b24b3929ee9dec7e32180a21c11d28703961b  ./.github/workflows/validate.yml
 9e91fb1ac0b8481e8c4f745842935ef6139dceee139002a5156a98c39d85d9c0  ./README.md
 fbec0a72702b2526c3bac37eed7c0b7c2a12ec5ba0fa84f2c1c6ab2d10270f51  ./docs/agile-delivery.md
 2e91ce4ffe5f8f56b62bc893252a65bfbed7e3bcf33428188d9e62fe106fd4ab  ./docs/architecture.md
