@@ -7,13 +7,20 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out repository
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Verify release ledger
-        run: python scripts/verify_checksums.py
-
-      - name: Validate repository controls
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Repository validation
         run: python validation/validate_repository.py
+      - name: Graph validation
+        run: python scripts/validate_graph.py
+      - name: Verify release ledger
+        run: python scripts/checksums.py --check
+      - name: Exact-node offline adversarial replay
+        run: |
+          node tests/offline_exact_node_tests.js workflows/VANTIX-Attestor-Adversarial-Regression-Harness-v0.1-public.json /tmp/attestor-offline.json
+          cmp /tmp/attestor-offline.json evidence/offline-exact-node-test-results.json
