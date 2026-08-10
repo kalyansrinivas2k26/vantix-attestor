@@ -1,0 +1,15 @@
+const fs=require('fs'),crypto=require('crypto');
+const wfPath=process.argv[2],outPath=process.argv[3];
+const wf=JSON.parse(fs.readFileSync(wfPath,'utf8'));
+const nodes=Object.fromEntries(wf.nodes.map(n=>[n.name,n]));
+function api(items){const a=Array.isArray(items)?items:[];return {all:()=>a,first:()=>a[0]||{json:{}},last:()=>a[a.length-1]||{json:{}},item:a[0]||{json:{}}};}
+function run(name,items){const code=nodes[name]?.parameters?.jsCode;if(!code)throw new Error('no_code:'+name);return new Function('$input',code)(api(items));}
+const tests=[];function test(id,fn){try{tests.push({id,status:'PASS',details:fn()});}catch(e){tests.push({id,status:'FAIL',error:String(e.stack||e)});}}
+let state=[];
+test('AT-OFF-01_execute_exact_harness_code',()=>{for(const n of ['02 Load Test Matrix','03 Test Commitment Assurance Fail Closed','04 Test Service Recovery Negative Paths','05 Test Customer Momentum Negative Paths','06 Test OWASP Aligned AI Controls','07 Test Cross Module Isolation','08 Assert Entire Regression Suite','09 Build Evidence Report']) state=run(n,state);const s=state[0]?.json;if(!s||s.summary?.status!=='PASSED'||s.summary?.passed!==18||s.summary?.total!==18)throw new Error('summary_not_18_18');return {status:s.summary.status,passed:s.summary.passed,total:s.summary.total};});
+test('AT-OFF-02_all_expected_test_ids_present',()=>{const ids=state[0].json.results.map(r=>r.id);const expected=['CA-N01','CA-N02','CA-N03','CA-N04','SR-N01','SR-N02','SR-N03','SR-N04','CM-N01','CM-N02','CM-N03','SEC-01','SEC-02','SEC-03','SEC-04','XMOD-01','XMOD-02','XMOD-03'];if(JSON.stringify(ids)!==JSON.stringify(expected))throw new Error('ids_mismatch:'+ids.join(','));return {ids};});
+test('AT-OFF-03_every_exact_result_passes',()=>{const failed=state[0].json.results.filter(r=>!r.passed);if(failed.length)throw new Error('failed:'+failed.map(x=>x.id).join(','));return {failed:0};});
+test('AT-OFF-04_evidence_report_preserves_synthetic_boundary',()=>{const h=state[0].json.executiveHtml||'';if(!h.includes('SYNTHETIC ADVERSARIAL / REGRESSION VALIDATION ONLY'))throw new Error('synthetic_banner_missing');if(!h.includes('No live Salesforce, model-provider, or customer action occurred.'))throw new Error('live_boundary_missing');return {syntheticBanner:true,noLiveActionStatement:true};});
+test('AT-OFF-05_ten_node_topology',()=>{if(wf.nodes.length!==10)throw new Error('node_count:'+wf.nodes.length);return {nodeCount:10};});
+const result={evidenceClass:'OFFLINE_EXACT_NODE_CODE_EXECUTION',n8nRuntimeExecution:false,workflowSha256:crypto.createHash('sha256').update(fs.readFileSync(wfPath)).digest('hex'),testCount:tests.length,passCount:tests.filter(t=>t.status==='PASS').length,failCount:tests.filter(t=>t.status==='FAIL').length,regressionSummary:state[0]?.json?.summary?{total:state[0].json.summary.total,passed:state[0].json.summary.passed,failed:state[0].json.summary.failed,status:state[0].json.summary.status}:null,tests};
+if(outPath)fs.writeFileSync(outPath,JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));if(result.failCount)process.exit(1);

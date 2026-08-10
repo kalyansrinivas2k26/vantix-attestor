@@ -1,0 +1,73 @@
+{
+  "evidenceClass": "OFFLINE_EXACT_NODE_CODE_EXECUTION",
+  "n8nRuntimeExecution": false,
+  "workflowSha256": "eb687b087956459d1d758138ee59afadbd63d39db69e5df46eaf810dbddfaa39",
+  "testCount": 5,
+  "passCount": 5,
+  "failCount": 0,
+  "regressionSummary": {
+    "total": 18,
+    "passed": 18,
+    "failed": 0,
+    "status": "PASSED"
+  },
+  "tests": [
+    {
+      "id": "AT-OFF-01_execute_exact_harness_code",
+      "status": "PASS",
+      "details": {
+        "status": "PASSED",
+        "passed": 18,
+        "total": 18
+      }
+    },
+    {
+      "id": "AT-OFF-02_all_expected_test_ids_present",
+      "status": "PASS",
+      "details": {
+        "ids": [
+          "CA-N01",
+          "CA-N02",
+          "CA-N03",
+          "CA-N04",
+          "SR-N01",
+          "SR-N02",
+          "SR-N03",
+          "SR-N04",
+          "CM-N01",
+          "CM-N02",
+          "CM-N03",
+          "SEC-01",
+          "SEC-02",
+          "SEC-03",
+          "SEC-04",
+          "XMOD-01",
+          "XMOD-02",
+          "XMOD-03"
+        ]
+      }
+    },
+    {
+      "id": "AT-OFF-03_every_exact_result_passes",
+      "status": "PASS",
+      "details": {
+        "failed": 0
+      }
+    },
+    {
+      "id": "AT-OFF-04_evidence_report_preserves_synthetic_boundary",
+      "status": "PASS",
+      "details": {
+        "syntheticBanner": true,
+        "noLiveActionStatement": true
+      }
+    },
+    {
+      "id": "AT-OFF-05_ten_node_topology",
+      "status": "PASS",
+      "details": {
+        "nodeCount": 10
+      }
+    }
+  ]
+}

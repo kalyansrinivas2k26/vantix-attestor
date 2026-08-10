@@ -134,6 +134,7 @@
       ]
     }
   ],
+  "pinData": {},
   "connections": {
     "01 Manual Trigger - Adversarial Regression": {
       "main": [
@@ -240,7 +241,5 @@
     "executionOrder": "v1",
     "binaryMode": "separate",
     "availableInMCP": false
-  },
-  "nodeGroups": [],
-  "tags": []
+  }
 }
