@@ -22,4 +22,9 @@ No Cpk, process capability, control limits or statistically meaningful Sigma lev
 | Measure | CTQ definitions and independent denominators | Defined; dataset insufficient |
 | Analyze | Defect register and FMEA | Initial analysis complete |
 | Improve | Service Recovery defects corrected before import | Demonstrated for listed defects |
-| Control | Regression catalogue, hashes and release gates | Complete for Portfolio Preview: 18/18 synthetic regression checks passed and repository CI is green |
+| Control | Regression catalogue, hashes and release gates | Designed; repeated-run evidence pending |
+
+
+## Measurement boundary
+
+Each module retains its own CTQ/opportunity definition. A single pooled Attestor DPMO denominator is not used. Executed test `XMOD-01` verifies denominator isolation in the synthetic adversarial harness. No Cpk/process-capability claim is made from synthetic portfolio data.

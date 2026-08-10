@@ -1,24 +1,33 @@
-# VANTIX Attestor — Evidence Index
+# Evidence Index
 
-## Portfolio Preview closure evidence
+## Positive module execution
 
-| Evidence ID | Claim | Artifact |
-|---|---|---|
-| EV-CA-01 | Commitment Assurance completed one owner-run synthetic n8n path with all 20 nodes green. | `evidence/screenshots/commitment-assurance-green.png` |
-| EV-SR-01 | Service Recovery completed one owner-run synthetic n8n path with all 20 nodes green. | `evidence/screenshots/service-recovery-green.png` |
-| EV-CM-01 | Customer Momentum completed one owner-run synthetic n8n path with all 24 nodes green. | `evidence/screenshots/customer-momentum-green.png` |
-| EV-ADV-01 | Consolidated adversarial regression completed successfully in n8n. | `evidence/screenshots/adversarial-regression-green.png` |
-| EV-ADV-02 | 18/18 synthetic adversarial, negative-path, security and cross-module tests passed. | `evidence/reports/adversarial-regression-v0.1.html` |
-| EV-CI-01 | GitHub Actions validation passed on the dedicated `vantix-attestor` release repository after checksum correction and before the documentation-synchronization commit. | Green GitHub Actions run captured during release closure |
+| Module | Workflow | Execution evidence | Report |
+| --- | --- | --- | --- |
+| Commitment Assurance | `workflows/VANTIX-Attestor-Commitment-Assurance-v0.3-public.json` | `evidence/screenshots/commitment-assurance-green.png` | `evidence/reports/commitment-assurance-synthetic.html` |
+| Service Recovery | `workflows/VANTIX-Attestor-Service-Recovery-v0.2-public.json` | `evidence/screenshots/service-recovery-green.png` | `evidence/reports/service-recovery-synthetic.html` |
+| Customer Momentum | `workflows/VANTIX-Attestor-Customer-Momentum-v0.1-public.json` | `evidence/screenshots/customer-momentum-green.png` | `evidence/reports/customer-momentum-synthetic.html` |
 
-## Adversarial coverage
-- Commitment Assurance: 4 fail-closed cases.
-- Service Recovery: 4 negative-path cases.
-- Customer Momentum: 3 negative-path cases.
-- Shared kernel / OWASP-aligned AI controls: 4 cases.
-- Cross-module isolation: 3 cases.
+## Adversarial regression
 
-## Limitations
-All regression evidence is synthetic. It does not demonstrate production-scale operation, live Salesforce execution for the new Attestor modules, live model-provider execution for those modules, or real-customer outcome validation.
+- Harness: `workflows/VANTIX-Attestor-Adversarial-Regression-Harness-v0.1-public.json`
+- Owner-run report: `evidence/reports/adversarial-regression-v0.1.html`
+- Owner-run workflow screenshot: `evidence/screenshots/adversarial-regression-green.png`
+- Result: **18/18 PASSED**
+- Boundary: synthetic adversarial/regression validation; no live Salesforce, model-provider, or customer action.
 
-| EV-MIG-01 | Control Value-to-Attestor lineage, preservation and redesign decisions are documented. | `docs/control-value-to-attestor-migration.md` |
+## Local executable hardening evidence
+
+- `evidence/offline-exact-node-test-results.json`
+- `validation/NEGATIVE_TEST_EVIDENCE.md`
+- `SHA256SUMS.txt`
+
+These are local package-validation artifacts. They do not replace owner-run n8n evidence.
+
+## Defect evidence
+
+See `docs/defect-register.md` for the Service Recovery pre-import finding and correction.
+
+## Claim boundary
+
+See `docs/EVIDENCE_PROVENANCE.md`. No file in this index proves production readiness, real-customer impact, external certification, or production-scale process capability.

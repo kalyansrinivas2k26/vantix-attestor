@@ -1,0 +1,26 @@
+# GitHub Presentation Checklist
+
+- [x] Canonical project identity: VANTIX Attestor.
+- [x] Portfolio Preview v0.1.2 wording aligned.
+- [x] README one-line business outcome.
+- [x] Architecture diagram.
+- [x] Three positive execution results.
+- [x] 18/18 adversarial regression evidence.
+- [x] One real failure/fix.
+- [x] Honest limitation / What This Does Not Prove.
+- [x] Evidence index.
+- [x] Audience guide and plain-language summary.
+- [x] OWASP-aligned executed-vs-documented boundary.
+- [x] PMI / AI governance mapping.
+- [x] Canonical 100-point internal scorecard.
+- [x] `.gitignore`, MIT `LICENSE`, `SECURITY.md`, `CONTRIBUTING.md`.
+- [x] Generic Markdown link/anchor checker.
+- [x] Secret scan.
+- [x] Graph validation.
+- [x] Exact-node offline adversarial replay.
+- [x] Full-file checksum ledger.
+- [x] Negative tests proving controls fail when attacked.
+- [ ] Recorded 60–90 second demo.
+- [ ] Upload final package.
+- [ ] Verify exact final GitHub Actions run is Green.
+- [ ] Freeze Project 4.

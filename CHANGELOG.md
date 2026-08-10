@@ -1,22 +1,19 @@
 # Changelog
 
-All notable VANTIX Attestor portfolio-release changes are recorded here.
+## Portfolio Preview v0.1.0
+- Established VANTIX Attestor as the three-module evolution of the Control Value pattern.
+- Preserved owner-run synthetic evidence for Commitment Assurance, Service Recovery, and Customer Momentum.
 
-## [0.1.1-preview] — 2026-08-07
+## Portfolio Preview v0.1.1
+- Added consolidated adversarial regression harness and 18/18 passing evidence.
+- Synchronized test/security/traceability documentation.
+- Added checksum verification and historical CI validation.
+- Preserved the demo as the remaining presentation artifact.
 
-### Closure synchronization
-- Synchronized executive, PMP, Agile, requirements, FMEA, defect, decision, risk and Six Sigma status documents with the executed 18/18 adversarial regression evidence.
-- Added `docs/control-value-to-attestor-migration.md` to preserve explicit lineage from the separately retained Control Value project.
-- Corrected evidence-index CI wording to reflect the dedicated `vantix-attestor` repository validation state.
-- Clarified that higher-maturity evidence limitations are not unfinished Portfolio Preview closure tasks.
-- Retained the 60–90 second demo as the sole intentionally pending presentation artifact.
-
-## [0.1.0-preview] — 2026-08-07
-
-### Portfolio Preview
-- Published dedicated VANTIX Attestor repository.
-- Added Commitment Assurance, Service Recovery and Customer Momentum sanitized workflows.
-- Captured green synthetic executions for all three primary modules.
-- Added consolidated adversarial regression harness; 18/18 synthetic negative-path, OWASP-aligned and cross-module checks passed.
-- Added executive, Agile, PMP, Six Sigma, security, traceability, evidence and release documentation.
-- Established GitHub Actions validation and SHA-256 repository integrity verification.
+## Portfolio Preview v0.1.2 — final upload hardening
+- Aligned the active README to Portfolio Preview v0.1.1.
+- Added `.gitignore`, MIT `LICENSE`, `SECURITY.md`, and `CONTRIBUTING.md`.
+- Added Audience Guide, Plain-Language Summary, Evidence Provenance, OWASP AI mapping, PMI AI mapping, Release Lineage, GitHub checklist, and Freeze Gap Matrix.
+- Replaced the scorecard with the canonical 100-point rubric and arithmetic validation.
+- Added generic Markdown link/anchor validation, secret scanning, graph validation, exact-node offline regression execution, complete checksums, and adversarial validator proof.
+- Historical CI evidence is preserved as historical only; the final merged commit must earn its own GitHub Actions Green result.

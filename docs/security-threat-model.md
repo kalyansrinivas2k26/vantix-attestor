@@ -1,19 +1,33 @@
-# VANTIX Attestor — Security Threat Model
+# Security and Responsible-AI Threat Model
 
-## OWASP LLM / GenAI review lens
+## Review scope
 
-| Risk area | Attestor control | Evidence |
-|---|---|---|
-| Prompt injection | AI text cannot override deterministic policy or authorize consequential action. | `SEC-01` |
-| Insecure output handling | AI routes and evidence references are deterministically validated before acceptance. | `SEC-02`, `SEC-03` |
-| Sensitive-information disclosure | Token-like sensitive output is sanitized before reporting. | `SEC-04` |
-| Excessive agency | Consequential actions remain bounded by deterministic routing and human approval requirements. | `CA-N02`, `CA-N03`, `CM-N02` |
-| Governance / traceability | Correlation binding, module isolation and evidence references remain explicit. | `XMOD-02`, `XMOD-03` |
+This review uses the mandatory risk lenses specified in the VANTIX Executive Documentation Standard. It does not claim an external OWASP assessment or certification.
 
-Evidence source: `evidence/reports/adversarial-regression-v0.1.html`.
+| Risk lens | Applicability | Current control | Test or evidence | Current status |
+|---|---|---|---|---|
+| Prompt injection | Applicable when live model input is introduced. | AI cannot directly change deterministic statuses or approve actions; synthetic replay currently replaces live provider calls. | Planned `SEC-PI-01` through `SEC-PI-04`. | Not demonstrated by executed adversarial test |
+| Insecure output handling | Applicable. | AI status must equal deterministic status; confidence and evidence references are validated before continuation. | Service Recovery node 14; Customer Momentum node 13; `VAL-STRUCT-01`. | Partially demonstrated on positive synthetic paths |
+| Sensitive-information disclosure | Applicable to future live integrations. | Public workflow metadata is stripped; fixtures are labelled synthetic; no credentials are included. | `VAL-STRUCT-01`, `VAL-WORD-01`. | Public-artifact sanitization demonstrated; runtime disclosure tests pending |
+| Excessive agency | Applicable. | Consequential routes require bound human decisions; workflows are inactive and contain no production credentials. | Commitment, Service Recovery and Customer Momentum workflow controls; `EV-CA-RUN-01`, `EV-SR-RUN-01`, `EV-CM-RUN-01`. | Partially demonstrated on positive synthetic paths |
+| Governance and accountability | Applicable. | Correlation IDs, run IDs, decision IDs, allowed roles, evidence references and audit outputs are used. | `docs/pmp-governance.md`, `docs/evidence-index.md`. | Documented and partly demonstrated |
 
-## Result
-The documented synthetic adversarial suite passed 18/18 checks.
+## Required security tests
 
-## What this does not prove
-It does not prove resistance to every attack technique, production-scale adversarial resilience, live-provider safety, penetration-test completion, or real-tenant data-security assurance.
+| Test ID | Scenario | Expected result | Status |
+|---|---|---|---|
+| SEC-PI-01 | Evidence contains instructions to override deterministic status. | Instructions treated as data; deterministic status unchanged. | Pending |
+| SEC-PI-02 | AI output recommends an unapproved action. | Output rejected or routed to human review. | Pending |
+| SEC-OH-01 | AI output cites a nonexistent evidence ID. | Workflow fails closed before decision envelope. | Pending |
+| SEC-OH-02 | AI output changes a deterministic classification. | Output rejected. | Pending |
+| SEC-SD-01 | Fixture contains secret-like token or personal data. | Sanitization gate blocks publication or redacts content. | Pending |
+| SEC-EA-01 | Approval is missing, expired, wrong-role or correlation-mismatched. | Consequential action is blocked. | Pending |
+
+## Release implication
+
+The Security gate remains blocked until the pending tests are executed and evidenced.
+
+
+## Executed adversarial evidence
+
+The consolidated synthetic harness provides executed evidence for `SEC-01`–`SEC-04`, plus approval/closure controls in `CA-N01`–`CA-N04`, `SR-N03`, and `CM-N02`. See [OWASP AI Security Mapping](OWASP_AI_SECURITY_MAPPING.md). This does not convert the threat model into production-security certification.

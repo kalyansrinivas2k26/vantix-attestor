@@ -1,42 +1,42 @@
-Customer teams cannot safely close commitments, recover services, or intervene on deteriorating accounts when evidence, decision authority, and measured outcomes are not bound into one governed process.
+# Executive Brief
 
-# 1. Situation
+**Business outcome:** VANTIX Attestor makes customer-outcome decisions more defensible by binding evidence, deterministic controls, human authority, and outcome verification across three customer-operations domains.
 
-Customer Success Managers, service owners and Salesforce administrators often need to decide whether a commitment was actually fulfilled, whether a service incident is truly recovered, or whether a change in customer behaviour warrants intervention. Those decisions become unreliable when activity completion, technical status, customer confirmation, approval and measured outcome are stored or assessed separately.
+## Situation
 
-# 2. Complication
+Customer teams may close commitments, mark services restored, or launch account interventions while evidence, authority and outcome confirmation remain fragmented.
 
-No project-specific competitor comparison has yet been completed and evidenced for VANTIX Attestor. This Portfolio Preview therefore makes no market-gap or differentiation claim. The demonstrated operational gap is narrower: conventional task, case and account-status updates do not by themselves prove evidence validity, human decision authority or measured outcome.
+## Complication
 
-# 3. Question
+This final hardening pass did not perform a fresh external competitive-product review. Its differentiation claim is therefore limited to the control composition demonstrated by this repository and must not be read as market exclusivity.
 
-Can customer-outcome decisions be made through one governed pattern while preserving separate domain rules for commitments, service recovery and customer momentum?
+## Question
 
-# 4. Answer
+Can one governed control pattern support commitment assurance, service recovery and customer momentum without allowing AI narrative, incomplete evidence, or cross-module leakage to become decision authority?
 
-Use a shared governed-control pattern for correlation, evidence validation, bounded AI output checking, approval binding and audit reporting, while keeping each module's decision rules, Critical-to-Quality measures and denominators independent.
+## Answer
 
-# 5. Evidence
+The Portfolio Preview demonstrates that design with three independently governed module workflows, deterministic decision boundaries, human approval where consequential, separate Six Sigma measurement boundaries, and a consolidated adversarial harness.
 
-- **EV-CA-RUN-01:** Commitment Assurance owner-run synthetic n8n execution completed with 20 visible green nodes; artifact: `evidence/screenshots/commitment-assurance-green.png`.
-- **EV-SR-RUN-01:** Service Recovery owner-run synthetic n8n execution completed with 20 visible green nodes; artifact: `evidence/screenshots/service-recovery-green.png`.
-- **EV-CM-RUN-01:** Customer Momentum owner-run synthetic n8n execution completed with 24 visible green nodes; artifact: `evidence/screenshots/customer-momentum-green.png`.
-- **VAL-STRUCT-01:** Sanitized public workflow exports contain 20, 20 and 24 nodes respectively, are inactive, have no broken connection targets and omit exported n8n instance metadata; artifact: `validation/structural-validation.json`.
-- **DEF-SR-01:** Service Recovery ordering and validation defects were identified before live import, corrected in v0.2 and followed by a successful owner-run synthetic execution; artifacts: `docs/defect-register.md` and `workflows/VANTIX-Attestor-Service-Recovery-v0.2-public.json`.
-- **EV-REPORT-01:** Each primary module generated a synthetic-labelled HTML report under `evidence/reports/`.
+## Evidence
 
-# 6. What This Doesn't Prove Yet
+- Commitment Assurance: owner-run synthetic n8n path, 20 nodes green.
+- Service Recovery: owner-run synthetic n8n path, 20 nodes green.
+- Customer Momentum: owner-run synthetic n8n path, 24 nodes green.
+- Adversarial regression: 18/18 PASSED across module failures, OWASP-aligned AI controls and cross-module isolation.
+- Service Recovery defect history demonstrates a pre-import weakness found, corrected and re-executed.
+- Repository validators and checksums are executable and include negative-test proof in this hardening package.
 
-- It does not prove production-scale performance, reliability or operational supportability.
-- It does not prove live Salesforce reads or writes.
-- It does not prove live Gemini or another model-provider interaction; AI steps are synthetic replay fixtures.
-- It does not prove real-customer communication, approval or outcome.
-- The executed adversarial suite is synthetic and does not prove production-scale attack resistance, live-provider safety, penetration-test completion or real-tenant security.
-- It does not include a recorded 60–90 second demo. No external practitioner review is claimed.
-- It does not establish process capability, control limits, Cpk or a statistically meaningful Sigma level.
+## What This Doesn't Prove Yet
 
-# 7. Roadmap
+- production-scale reliability or capability;
+- live Salesforce integration for the newer modules;
+- live model-provider execution for the newer modules;
+- authenticated enterprise human-approval infrastructure;
+- real-customer business impact;
+- external certification or third-party audit;
+- a completed recorded demo.
 
-1. Record the 60–90 second demo.
-2. Seek and document practitioner review if and when realistically obtained; no such review is required or claimed for the current Portfolio Preview.
-3. Introduce controlled live-provider and live-Salesforce pilots only if the project is intentionally advanced beyond Portfolio Preview.
+## Roadmap
+
+Only evidence-backed next gaps remain: final GitHub Actions verification on the merged commit, the recorded 60–90 second demo, and future live/production evidence only if the project is intentionally advanced beyond Portfolio Preview.
